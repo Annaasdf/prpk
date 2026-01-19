@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Школьное питание</h1>
+</header>
+
+<div class="container">
+    <h2>Регистрация</h2>
+
+    <form method="post">
+        <label>ФИО</label>
+        <input name="name" required>
+
+        <label>Email</label>
+        <input name="email" type="email" required>
+
+        <label>Пароль</label>
+        <input name="password" type="password" required>
+
+        <label>Роль</label>
+        <select name="role">
+            <option value="student">Ученик</option>
+            <option value="cook">Повар</option>
+            <option value="admin">Администратор</option>
+        </select>
+
+        <button>Зарегистрироваться</button>
+    </form>
+
+    <a href="/login">Войти</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Администратор</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Панель администратора</h1>
+</header>
+
+<div class="container">
+
+    <h2>Заявки на закупку</h2>
+
+    {% for r in requests %}
+    <div>
+        <p>{{ r.product }} — {{ r.quantity }} ({{ r.status }})</p>
+
+        <form method="post">
+            <input type="hidden" name="id" value="{{ r.id }}">
+            <select name="status">
+                <option value="approved">Одобрить</option>
+                <option value="rejected">Отклонить</option>
+            </select>
+            <button>Применить</button>
+        </form>
+        <hr>
+    </div>
+    {% endfor %}
+
+    <a href="/logout">Выйти</a>
+</div>
+
+</body>
+</html>

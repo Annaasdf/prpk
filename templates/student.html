@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ученик</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header><h1>Кабинет ученика</h1></header>
+
+<div class="container">
+
+    <h2>Оплата питания</h2>
+    <form method="post">
+        <select name="meal">
+            <option value="breakfast">Завтрак</option>
+            <option value="lunch">Обед</option>
+        </select>
+        <button name="pay">Оплатить</button>
+    </form>
+
+    <h2>Мои заказы</h2>
+    <ul>
+        {% for o in orders %}
+        <li>{{ o.meal_type }} | оплачено: {{ o.paid }} | выдано: {{ o.received }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Аллергии</h2>
+    <form method="post">
+        <textarea name="allergy">{{ allergy.text if allergy }}</textarea>
+        <button>Сохранить</button>
+    </form>
+
+    <h2>Отзыв</h2>
+    <form method="post">
+        <textarea name="review"></textarea>
+        <button>Отправить</button>
+    </form>
+
+    <a href="/logout">Выйти</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Повар</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Кабинет повара</h1>
+</header>
+
+<div class="container">
+
+    <h2>Выданные заказы</h2>
+    <ul>
+        {% for o in orders %}
+        <li>Ученик ID {{ o.student_id }} — {{ o.meal_type }} — {{ o.status }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Заявка на закупку</h2>
+    <form method="post">
+        <label>Продукт</label>
+        <input name="product">
+
+        <label>Количество</label>
+        <input name="quantity">
+
+        <button>Отправить заявку</button>
+    </form>
+
+    <a href="/logout">Выйти</a>
+</div>
+
+</body>
+</html>
