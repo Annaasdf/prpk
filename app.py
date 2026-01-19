@@ -12,6 +12,8 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
 
+# Кошечки картошечки
+
 login_manager = LoginManager(app)
 login_manager.login_view = "routes.login"
 
